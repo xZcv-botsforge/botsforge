@@ -2,17 +2,10 @@
 
 import dynamic from "next/dynamic";
 import { ReactElement } from "react";
-import BaseLayout from "@/components/BaseLayout";
+import { BaseLayout, QuickLinks } from "@/components";
 import { FaBilibili, FaQuoteLeft, FaScrewdriverWrench } from "react-icons/fa6";
-import AIPoweredAnimation from "@/assets/lottie/AIPoweredAnimation.json";
-import AnalyticsAnimation from "@/assets/lottie/AnalyticsAnimation.json";
-import CollaborationAnimation from "@/assets/lottie/CollaborationAnimation.json";
-import HeroAnimation from "@/assets/lottie/HeroAnimation.json";
-import ManagementAnimation from "@/assets/lottie/ManagementAnimation.json";
-import MultiPlatformAnimation from "@/assets/lottie/MultiPlatformAnimation.json";
-import TemplateAnimation from "@/assets/lottie/TemplateAnimation.json";
+import * as Animations from "@/assets/lottie";
 import Link from "next/link";
-import QuickLinks from "@/components/QuickLinks";
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
@@ -49,27 +42,27 @@ export default function Home(): ReactElement {
                             </span>, You can&apos;t imagine.
                         </p>
                     </div>
-                    <Lottie animationData={HeroAnimation} loop autoPlay className="w-[324] min-md:w-[512] h-fit" />
+                    <Lottie animationData={Animations.HeroAnimation} loop autoPlay className="w-[324] min-md:w-[512] h-fit" />
                 </div>
             </section>
             <section className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 max-sm:px-16 py-8">
                 <div className="card p-6 flex flex-col items-center gap-4 rounded-2xl bg-base-300/25 hover:bg-base-300/50 hover:shadow-lg hover:border-base-300 transition-all min-h-[300px]">
-                    <Lottie animationData={HeroAnimation} loop autoPlay className="w-40 h-40" />
+                    <Lottie animationData={Animations.HeroAnimation} loop autoPlay className="w-40 h-40" />
                     <h3 className="text-xl font-semibold">Visual Bot Building</h3>
                     <p className="text-center opacity-80">Drag-and-drop interface for no-code bot logic.</p>
                 </div>
                 <div className="card p-6 flex flex-col items-center gap-4 rounded-2xl bg-base-300/25 hover:bg-base-300/50 hover:shadow-lg hover:border-base-300 transition-all min-h-[300px]">
-                    <Lottie animationData={ManagementAnimation} loop autoPlay className="w-40 h-40" />
+                    <Lottie animationData={Animations.ManagementAnimation} loop autoPlay className="w-40 h-40" />
                     <h3 className="text-xl font-semibold">Bot Management</h3>
                     <p className="text-center opacity-80">Easily manage and deploy your bots.</p>
                 </div>
                 <div className="card p-6 flex flex-col items-center gap-4 rounded-2xl bg-base-300/25 hover:bg-base-300/50 hover:shadow-lg hover:border-base-300 transition-all min-h-[300px]">
-                    <Lottie animationData={CollaborationAnimation} loop autoPlay className="w-40 h-40" />
+                    <Lottie animationData={Animations.CollaborationAnimation} loop autoPlay className="w-40 h-40" />
                     <h3 className="text-xl font-semibold">Collaboration & Scaling</h3>
                     <p className="text-center opacity-80">Work with teams and scale your bots effortlessly.</p>
                 </div>
                 <div className="card p-6 flex flex-col items-center gap-4 rounded-2xl bg-base-300/25 hover:bg-base-300/50 hover:shadow-lg hover:border-base-300 transition-all min-h-[300px]">
-                    <Lottie animationData={TemplateAnimation} loop autoPlay className="w-40 h-40" />
+                    <Lottie animationData={Animations.TemplateAnimation} loop autoPlay className="w-40 h-40" />
                     <h3 className="text-xl font-semibold">Template Library</h3>
                     <p className="text-center opacity-80">Pre-built templates for common bot use cases.</p>
                 </div>
@@ -78,7 +71,7 @@ export default function Home(): ReactElement {
                 <h2 className="text-3xl font-bold">What’s In Future?</h2>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-8 w-full max-w-6xl">
                     <div className="w-full lg:w-1/2">
-                    <Lottie animationData={AnalyticsAnimation} loop autoPlay className="w-full h-64" />
+                    <Lottie animationData={Animations.AnalyticsAnimation} loop autoPlay className="w-full h-64" />
                     </div>
                     <div className="w-full lg:w-1/2">
                     <h3 className="text-2xl font-bold">Advanced Analytics</h3>
@@ -89,7 +82,7 @@ export default function Home(): ReactElement {
                 </div>
                 <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-8 w-full max-w-6xl">
                     <div className="w-full lg:w-1/2">
-                    <Lottie animationData={AIPoweredAnimation} loop autoPlay className="w-full h-64" />
+                    <Lottie animationData={Animations.AIPoweredAnimation} loop autoPlay className="w-full h-64" />
                     </div>
                     <div className="w-full lg:w-1/2">
                     <h3 className="text-2xl font-bold">AI-Powered Bots</h3>
@@ -100,7 +93,7 @@ export default function Home(): ReactElement {
                 </div>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-8 w-full max-w-6xl">
                     <div className="w-full lg:w-1/2">
-                    <Lottie animationData={MultiPlatformAnimation} loop autoPlay className="w-full h-64" />
+                    <Lottie animationData={Animations.MultiPlatformAnimation} loop autoPlay className="w-full h-64" />
                     </div>
                     <div className="w-full lg:w-1/2">
                     <h3 className="text-2xl font-bold">Multi-Platform Support</h3>

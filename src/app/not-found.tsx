@@ -2,9 +2,9 @@
 
 import dynamic from "next/dynamic";
 import { ReactElement } from "react";
-import BaseLayout from "@/components/BaseLayout";
+import { BaseLayout } from "@/components";
+import { NotFoundAnimation } from "@/assets/lottie";
 import Link from "next/link";
-import NotFoundAnimation from "@/assets/lottie/NotFoundAnimation.json";
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 

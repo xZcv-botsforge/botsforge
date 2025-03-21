@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 import { FaBots } from "react-icons/fa6";
 import { IoMenuOutline, IoSearchOutline } from "react-icons/io5";
 import $ from "jquery";
-import "./style.css";
+import "./navbar.css";
 
 export default function Navbar(): ReactElement {
     return (

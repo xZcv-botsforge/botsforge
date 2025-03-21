@@ -1,7 +1,5 @@
 import { ReactElement, ReactNode } from "react";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import { Footer, Navbar, Sidebar } from "@/components";
 
 export default function BaseLayout({ children }: Partial<{ children: ReactNode; }>): ReactElement {
     return (

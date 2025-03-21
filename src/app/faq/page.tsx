@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ReactElement } from "react";
 import { FaQuestionCircle } from "react-icons/fa";
-import BaseLayout from "@/components/BaseLayout";
+import { BaseLayout } from "@/components";
 
 export default function FAQ(): ReactElement {
 	return (

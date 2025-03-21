@@ -1,43 +1,29 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
 import { ReactElement } from "react";
-
-const borel = localFont({
-  src: "fonts/Borel.ttf",
-  variable: "--font-borel"
-});
-
-const leaguespartan = localFont({
-  src: "fonts/LeagueSpartan.ttf",
-  variable: "--font-spartan"
-});
-
-const poppins = localFont({
-  src: "fonts/Poppins.ttf",
-  variable: "--font-poppins"
-});
-
-const quicksand = localFont({
-  src: "fonts/Quicksand.ttf",
-  variable: "--font-quicksand"
-})
+import type { Metadata } from "next";
+import * as Fonts from "@/assets/fonts";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "botsforge.com",
-  description: "Develop next gen-zBots.",
+	title: "botsforge.com",
+	description: "Develop next gen-zBots.",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>): ReactElement {
-  return (
-    <html lang="en" className="scroll-smooth bg-base-200">
-      <body className={`${borel.variable} ${leaguespartan.variable} ${poppins.variable} ${quicksand.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en" className="scroll-smooth bg-base-200">
+			<body
+				className={`${Fonts.Borel.variable}
+                    ${Fonts.LeagueSpartan.variable}
+                    ${Fonts.Poppins.variable}
+                    ${Fonts.Quicksand.variable}
+                    antialiased`}
+			>
+				{children}
+			</body>
+		</html>
+	);
 }
