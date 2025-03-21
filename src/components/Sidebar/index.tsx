@@ -47,7 +47,7 @@ export default function Sidebar(): ReactElement {
                 <div className="flex flex-col border-l-4 border-base-100 ml-2 pl-2">
                     <Link href="/blog" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Blog</Link>
                     <Link href="/forum" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Community Forum</Link>
-                    <Link href="https://github.com/itsakc-me/botsforge/blob/main/CONTRIBUTING.md" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Contribute</Link>
+                    <Link href="https://github.com/xZcv-botsforge/botsforge/blob/main/CONTRIBUTING.md" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Contribute</Link>
                 </div>
             </div>
             <div className="flex flex-col items-start justify-center gap-2 w-full">
