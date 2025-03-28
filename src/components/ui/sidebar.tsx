@@ -2,12 +2,29 @@
 
 import Link from "next/link";
 import { ReactElement } from "react";
-import { IoCodeSlashOutline, IoFileTrayOutline, IoHelpCircleOutline, IoLibraryOutline, IoPeopleOutline } from "react-icons/io5";
+import { IoCodeSlashOutline, IoFileTrayOutline, IoHelpCircleOutline, IoInformationCircleOutline, IoLibraryOutline, IoPeopleOutline } from "react-icons/io5";
+import { LogOut, SignIn } from "./auth";
+import { useSession } from "next-auth/react";
 
 export default function Sidebar(): ReactElement {
+    const { data: session } = useSession();
+
     return (
         <ul id="sidebar" className="base sidebar transition-all ease-in-out duration-300 fixed z-1 top-0 left-0 max-lg:left-[-100%] overflow-x-hidden flex flex-col items-start justify-start gap-7 w-72 h-screen px-6 py-8 border-r-2 border-base-100 shadow-md shadow-base-100">
             <IoCodeSlashOutline className="text-8xl m-auto text-accent min-w-fit min-h-fit" />
+            <div className="flex flex-col items-start justify-center gap-2 w-full">
+                <sub className="text-[1rem] mb-1">
+                    <div className="inline-flex items-center gap-2">
+                        <IoInformationCircleOutline className="text-blue-500" />{" "}
+                        <span className="opacity-50">Info</span>
+                    </div>
+                </sub>
+                <hr className="mb-3 w-full opacity-15" />
+                <div className="flex flex-col border-l-4 border-base-100 ml-2 pl-2">
+                    <Link href="/profile" className="font-medium text-lg hover:cursor-pointer hover:link-primary">View Profile</Link>
+                    <Link href="/account" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Account Information</Link>
+                </div>
+            </div>
             <div className="flex flex-col items-start justify-center gap-2 w-full">
                 <sub className="text-[1rem] mb-1">
                     <div className="inline-flex items-center gap-2">
@@ -18,7 +35,6 @@ export default function Sidebar(): ReactElement {
                 <hr className="mb-3 w-full opacity-15" />
                 <div className="flex flex-col border-l-4 border-base-100 ml-2 pl-2">
                     <Link href="/" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Home</Link>
-                    <Link href="/profile" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Your Profile</Link>
                     <Link href="/projects" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Your Projects</Link>
                     <Link href="/docs" className="font-medium text-lg hover:cursor-pointer hover:link-primary">Documentation</Link>
                 </div>
@@ -65,6 +81,11 @@ export default function Sidebar(): ReactElement {
                     <Link href="/faq" className="font-medium text-lg hover:cursor-pointer hover:link-primary">FAQs</Link>
                 </div>
             </div>
+            {
+                session ?
+                <LogOut /> :
+                <SignIn provider="google" />
+            }
         </ul>
     )
 }

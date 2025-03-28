@@ -1,6 +1,7 @@
-import { ReactElement } from "react";
-import type { Metadata } from "next";
 import * as Fonts from "@/assets/fonts";
+import type { Metadata } from "next";
+import { ReactElement } from "react";
+import Providers from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
                     ${Fonts.Quicksand.variable}
                     antialiased`}
 			>
-				{children}
+				<Providers>{children}</Providers>
 			</body>
 		</html>
 	);

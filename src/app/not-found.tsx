@@ -1,9 +1,9 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { ReactElement } from "react";
-import { BaseLayout } from "@/components";
 import { NotFoundAnimation } from "@/assets/lottie";
+import { ReactElement } from "react";
+import BaseLayout from "@/components/layout";
 import Link from "next/link";
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });

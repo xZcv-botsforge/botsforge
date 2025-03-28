@@ -1,9 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { ReactElement } from "react";
-import { BaseLayout, QuickLinks } from "@/components";
 import { FaBilibili, FaQuoteLeft, FaScrewdriverWrench } from "react-icons/fa6";
+import { ReactElement } from "react";
+import { QuickLinks } from "@/components/ui";
+import BaseLayout from "@/components/layout";
 import * as Animations from "@/assets/lottie";
 import Link from "next/link";
 

@@ -5,7 +5,7 @@ import {
 	FaGithub,
 } from "react-icons/fa";
 import Link from "next/link";
-import { BaseLayout } from "@/components";
+import BaseLayout from "@/components/layout";
 
 export default function HelpCenterPage() {
 	return (

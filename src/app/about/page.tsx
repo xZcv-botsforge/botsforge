@@ -1,6 +1,6 @@
 import { FaGithub, FaUsers, FaCode } from "react-icons/fa";
 import Link from "next/link";
-import { BaseLayout } from "@/components";
+import BaseLayout from "@/components/layout";
 import Image from "next/image";
 
 type Contributor = {

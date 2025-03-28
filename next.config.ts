@@ -1,12 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    basePath: "/botsforge",
-    output: "export",
-    reactStrictMode: true,
-    images: {
-      unoptimized: true
-    }
+   images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'lh3.googleusercontent.com'
+        },
+      ],
+    },
 };
+
+if (process.env.NODE_ENV === "production") {
+   nextConfig["basePath"] = "/botsforge";
+   nextConfig["output"] = "export";
+   nextConfig["reactStrictMode"] = true;
+   nextConfig["images"]!["unoptimized"] = true;
+}
 
 export default nextConfig;
